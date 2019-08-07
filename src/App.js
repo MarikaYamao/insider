@@ -71,7 +71,7 @@ class App extends React.Component {
         <Post number={this.state.viewNumber + 1} 
                   post={post}
                   theme={theme}
-                  nextViewNumber={()=>{ this.nextViewNumber() }}/>
+                  nextViewNumber={()=>{ this.nextViewNumber(); document.getElementById('label1').checked = false; }}/>
         );
     }else if(this.state.positions.length == this.state.viewNumber){
       position = (

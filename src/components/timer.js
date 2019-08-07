@@ -6,7 +6,7 @@ class Timer extends React.Component {
     this.state = {
       minutes: '05',
       seconds: '00',
-      time: 3};
+      time: 300};
   }
 
   componentDidMount() {
