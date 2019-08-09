@@ -19,6 +19,10 @@ li {
   list-style-type: none;
 }
 
+ol {
+  margin-right: 1em;
+}
+
 ol li {
   list-style-type: inherit;
 }
