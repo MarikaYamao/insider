@@ -14,7 +14,7 @@ input[type="submit"]::focus,
 input[type="button"]::focus {
   outline-offset: -2px;
 }
-input[type="text"]::disabled {
+input[type="text"][disabled] {
   -webkit-text-fill-color: black;
   opacity: 1;
 }
@@ -26,6 +26,7 @@ input,textarea {
   max-width: 100%;
   border-radius: 0;
   margin: 0;
+  background-color: #fff;
 }
 /* iOSでのデフォルトスタイルをリセット */
 
