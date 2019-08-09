@@ -3,6 +3,7 @@ import React from 'react';
 function Description() {
   return (
     <div className="description">
+      <h2>遊び方</h2>
         <ol>
           <li>参加する人数を選択して「役職を配る」ボタンを押してください。</li>
           <li>1人ずつ、「◯人目」のボタンを押して自分の役職を確認してください。<br/>マスターとインサイダーには役職と同時にお題が表示されます。</li>

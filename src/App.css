@@ -4,8 +4,9 @@ body {
 }
 
 button {
-  margin-top: 20px;
-  padding: 5px 10px;
+  margin-top: 2em;
+  padding: 0.5em 1em;
+  line-height: 1.5em;
   font-weight: bold;
   border: solid 2px black;
   cursor :pointer;
@@ -29,7 +30,8 @@ ol li {
 
 input[type="text"]{
   border: solid 2px black;
-  padding: 5px 10px;
+  padding: 0.5em 1em;
+  line-height: 1.5em;
   font-weight: bold;
   width: 20px;
 }
@@ -44,7 +46,11 @@ span {
 }
 
 h1 {
-  margin: 0.5em 0;
+  margin: 0;
+}
+
+h2 {
+  margin: 0.6em 1em;
 }
 
 .App {
@@ -59,10 +65,16 @@ h1 {
 
 .App-header {
   width: 80%;
-  margin: 1em auto;
-  padding: 5px;
+  margin: 2em auto 1em;
+  padding: 1em;
   background-color: #000;
   color: #e03d4d;
+}
+
+.App-header i {
+  color: #fff;
+  margin: 0 0.3em;
+  font-size: 1em;
 }
 
 .App-link {
@@ -89,8 +101,9 @@ h1 {
   display: none;
 }
 .positions label {
+  display: inline-block;
   background-color: #fff;
-  padding: 15px;
+  padding: 1em 2em;
   font-weight: bold;
   border: solid 2px black;
   cursor :pointer;
@@ -136,7 +149,9 @@ h1 {
   h1 {
     font-size: 1.5em;
   }
-  
+  h2 {
+    font-size: 1.3em;
+  }
   
   p {
     font-size: 1em;

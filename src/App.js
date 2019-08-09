@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import Setting from './components/setting.js';
 import Post from './components/post.js';
 import Timer from './components/timer.js';
@@ -148,7 +147,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>インサイダー・ゲーム</h1>
+          <h1>インサイダー<i class="fas fa-eye"></i>ゲーム</h1>
         </header>
         { this.viewSetting() }
         { this.viewPosition() }
