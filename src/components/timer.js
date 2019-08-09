@@ -38,6 +38,7 @@ class Timer extends React.Component {
     return (
       <div className="timer">
         <p>残り {this.state.minutes} : {this.state.seconds}</p>
+        <button onClick={()=>{this.stop()}}>終了</button>
       </div>
     );
   }

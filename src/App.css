@@ -1,5 +1,5 @@
 body {
-  background-color: #E40017;
+  background-color: #e03d4d;
   font-weight: bold;
 }
 
@@ -39,6 +39,10 @@ span {
   font-size: 0.8em;
 }
 
+h1 {
+  margin: 0.5em 0;
+}
+
 .App {
   text-align: center;
 }
@@ -51,9 +55,10 @@ span {
 
 .App-header {
   width: 80%;
-  margin: 0 auto;
+  margin: 1em auto;
+  padding: 5px;
   background-color: #000;
-  color: #E40017;
+  color: #e03d4d;
 }
 
 .App-link {
@@ -67,6 +72,9 @@ span {
 }
 .result p{
   font-size: 1.6em;
+}
+.result button{
+  width: 100%;
 }
 
 /* 役職 */
@@ -117,5 +125,27 @@ span {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 480px){
+  h1 {
+    font-size: 1.5em;
+  }
+  
+  
+  p {
+    font-size: 1em;
+  }
+  
+  span {
+    font-size: 0.8em;
+  }
+  
+  .result p{
+    font-size: 1.3em;
+  }
+  .timer p {
+    font-size: 1.5em;
   }
 }

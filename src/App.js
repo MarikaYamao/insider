@@ -13,7 +13,7 @@ class App extends React.Component {
     this.state = {
       value: 4,
       positions: [],
-      theme: 'スプライト',
+      theme: '',
       viewNumber: 0,
       gameStated: false,
       gameEnd: false,
@@ -125,9 +125,23 @@ class App extends React.Component {
         <div className="result">
           <p>お題：{this.state.theme}</p>
           {positions}
+          <button onClick={()=>{this.oneMore()}}>もう一回</button>
         </div>
         );
     }
+  }
+  
+  // もう一回
+  oneMore(){
+    this.setState({
+      positions: [],
+      theme: '',
+      viewNumber: 0,
+      gameStated: false,
+      gameEnd: false,
+      result: false,
+    });
+    this.makePosition();
   }
   
   render(){
