@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import Setting from './components/setting.js';
 import Post from './components/post.js';
 import Timer from './components/timer.js';
+import Description from './components/description.js';
+import Theme from './theme.json';
 import './App.css';
 
 class App extends React.Component {
@@ -23,11 +25,14 @@ class App extends React.Component {
   viewSetting(){
     if(this.state.positions.length === 0){
       return(
-        <Setting value={this.state.value}
-              addClick={()=>{ this.addValue() }}
-              takeClick={()=>{ this.takeValue() }}
-              submit={()=>{ this.makePosition() }}
-        />
+        <div>
+          <Setting value={this.state.value}
+                addClick={()=>{ this.addValue() }}
+                takeClick={()=>{ this.takeValue() }}
+                submit={()=>{ this.makePosition() }}
+          />
+          <Description />
+        </div>
       );
     }
   }
@@ -54,8 +59,10 @@ class App extends React.Component {
         };
     const unemployed = Array(this.state.value - 2).fill('庶民');
     let positions = new Array('ゲームマスター','インサイダー').concat(unemployed);
+    let theme = shuffle(Theme); //お題を取得してシャッフル
     this.setState({
       positions: shuffle(positions),
+      theme: theme[0]["theme"],// １つだけ取得
     });
   }
   
@@ -127,6 +134,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
+          <h1>インサイダー・ゲーム</h1>
         </header>
         { this.viewSetting() }
         { this.viewPosition() }

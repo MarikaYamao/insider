@@ -3,7 +3,6 @@ import React from 'react';
 function Setting(props) {
   return (
     <div className="number-people">
-      <h1>インサイダー・ゲーム</h1>
       <p>人数を選択してください</p>
       <input type="text" disabled="disabled" value={props.value}/>
       <button onClick={ props.addClick }>+</button>
