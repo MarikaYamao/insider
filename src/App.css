@@ -1,3 +1,28 @@
+/* iOSでのデフォルトスタイルをリセット */
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  appearance: button;
+  border: none;
+  cursor: pointer;
+}
+input[type="submit"]::-webkit-search-decoration,
+input[type="button"]::-webkit-search-decoration  {
+  display: none;
+}
+input[type="submit"]::focus,
+input[type="button"]::focus {
+  outline-offset: -2px;
+}
+input,textarea {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-appearance: none;
+  max-width: 100%;
+}
+/* iOSでのデフォルトスタイルをリセット */
+
 body {
   background-color: #e03d4d;
   font-weight: bold;
@@ -10,6 +35,7 @@ button {
   font-weight: bold;
   border: solid 2px black;
   cursor :pointer;
+  background-color: #fff;
 }
 
 button:focus {
@@ -28,12 +54,12 @@ ol li {
   list-style-type: inherit;
 }
 
-input[type="text"]{
+input[type="text"] {
   border: solid 2px black;
   padding: 0.5em 1em;
   line-height: 1.5em;
   font-weight: bold;
-  width: 20px;
+  width: 5em;
 }
 
 p {
