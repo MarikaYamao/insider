@@ -74,10 +74,13 @@ class App extends React.Component {
       const post = this.state.positions[this.state.viewNumber];
       const theme = post === '庶民' ? '' : 'お題：' + this.state.theme; 
       position = (
-        <Post number={this.state.viewNumber + 1} 
+        <div>
+          <Post number={this.state.viewNumber + 1} 
                   post={post}
                   theme={theme}
                   nextViewNumber={()=>{ this.nextViewNumber(); document.getElementById('label1').checked = false; }}/>
+          <button onClick={()=>{this.backToFirst()}}>最初に戻る</button>
+        </div>
         );
     }else if(this.state.positions.length == this.state.viewNumber){
       position = (
@@ -100,7 +103,10 @@ class App extends React.Component {
   viewTimer(){
     if(this.state.gameStated && !this.state.gameEnd){
       return (
-        <Timer end={()=>{this.setState({gameStated: false, gameEnd: true})}}/>
+        <div>
+          <Timer end={()=>{this.setState({gameStated: false, gameEnd: true})}}/>
+          <button onClick={()=>{this.backToFirst()}}>最初に戻る</button>
+        </div>
         );
     }else if(this.state.gameEnd && !this.state.result){
       return(
@@ -125,6 +131,7 @@ class App extends React.Component {
           <p>お題：{this.state.theme}</p>
           {positions}
           <button onClick={()=>{this.oneMore()}}>もう一回</button>
+          <button onClick={()=>{this.backToFirst()}}>最初に戻る</button>
         </div>
         );
     }
@@ -141,6 +148,19 @@ class App extends React.Component {
       result: false,
     });
     this.makePosition();
+  }
+  // 最初へ戻る
+  backToFirst(){
+    this.setState({
+      value: 4,
+      positions: [],
+      theme: '',
+      viewNumber: 0,
+      gameStated: false,
+      gameEnd: false,
+      result: false,
+    });
+    this.viewSetting();
   }
   
   render(){
