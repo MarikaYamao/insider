@@ -6,7 +6,10 @@ class Timer extends React.Component {
     this.state = {
       minutes: '05',
       seconds: '00',
-      time: 300};
+      time: 300 * 1000,
+      now: new Date(),
+      startTime: Date.now(),
+    };
   }
 
   componentDidMount() {
@@ -22,15 +25,16 @@ class Timer extends React.Component {
   }
   
   update () {
-    if(this.state.time === 1)this.stop();
-    const time = this.state.time - 1;
-    const minutes = parseInt(time / 60 % 60);
-    const seconds = time % 60;
+    const time = this.state.time - (Date.now() - this.state.startTime);
+    if(time <= 900)this.stop();
+    const date = new Date(time);
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
     
     this.setState({
-      minutes: ('00' + minutes).slice(-2),
-      seconds: ('00' + seconds).slice(-2),
-      time: time
+      minutes: ('0' + minutes).slice(-2),
+      seconds: ('0' + seconds).slice(-2),
+      now: date,
     });
   }
   
