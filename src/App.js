@@ -68,7 +68,7 @@ class App extends React.Component {
   // 役職配布
   viewPosition(){
     let position;
-    if(this.state.gameStated || this.state.gameEnd || this.state.positions.length == 0){
+    if(this.state.gameStated || this.state.gameEnd || this.state.positions.length === 0){
       return;
     }else if(this.state.positions.length > this.state.viewNumber){
       const post = this.state.positions[this.state.viewNumber];
@@ -82,7 +82,7 @@ class App extends React.Component {
           <button onClick={()=>{this.backToFirst()}}>最初に戻る</button>
         </div>
         );
-    }else if(this.state.positions.length == this.state.viewNumber){
+    }else if(this.state.positions.length === this.state.viewNumber){
       position = (
         <div>
           <p>ゲームを開始します</p>
@@ -167,7 +167,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>インサイダー<i class="fas fa-eye"></i>ゲーム</h1>
+          <h1>インサイダー<i className="fas fa-eye"></i>ゲーム</h1>
         </header>
         { this.viewSetting() }
         { this.viewPosition() }
